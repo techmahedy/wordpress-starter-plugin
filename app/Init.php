@@ -31,6 +31,7 @@ final class Init
 			Admin\UserProfileOptionsPage::class,
 			Admin\AuthorBoxAfterContent::class,
 			Admin\DisableUpdateSettingsPage::class,
+			Admin\DisableUpdateSettings::class,
 		];
 	}
 

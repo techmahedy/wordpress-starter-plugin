@@ -93,7 +93,7 @@ class DisableUpdateSettingsPage
         add_settings_field( 
             'comments_disable', 
             __('Disable WordPress default theme comments system','codechief'), 
-            array($this,'codechief_coments_disable'), 
+            array($this,'codechief_comments_disable'), 
             'codechief_plugin_update_page', 
             'codechief_section' 
         );
@@ -132,7 +132,7 @@ class DisableUpdateSettingsPage
                value="1" '.$val.' />';
     }
 
-    public function codechief_coments_disable()
+    public function codechief_comments_disable()
     {
        $val = isset( $this->settings['comments_disable'] ) == 1 
                 ? 'checked' : '';
