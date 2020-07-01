@@ -24,7 +24,6 @@
 
              jQuery(_result).html("Thanks for your feedback");
 
-             //disabled();
          },
          error: function(error){
 
@@ -34,17 +33,6 @@
        });
 
     })
-
-    // function disabled() {
-      
-    //   $("#codechief-like").submit(function (e) {
-
-    //       $("#codechief-like").attr("disabled", true);
-
-    //       return true;
-
-    //   });
-    // }
 
   });
 }(jQuery));

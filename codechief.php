@@ -95,17 +95,17 @@ if ( class_exists( 'App\\Plugin\\PluginDeActivated' ) ) {
 
 }
 
-  /**
-	*---------------------------------------------------------------------
-	* Activation & Deactivation Hook
-	*---------------------------------------------------------------------
-	*
-	* register_activation_hook call automatically when a plugin is installed
-	* register_deactivation_hook call automatically when a plugin is uninstalled
-	*
-	* @param $file and a $callback function 
-	*
-	*/
+/**
+ *---------------------------------------------------------------------
+ * Activation & Deactivation Hook
+ *---------------------------------------------------------------------
+ *
+ * register_activation_hook call automatically when a plugin is installed
+ * register_deactivation_hook call automatically when a plugin is uninstalled
+ *
+ * @param $file and a $callback function 
+ *
+ */
 
 register_activation_hook(__FILE__, array(PluginActivated::class,'create_database_table'));
 

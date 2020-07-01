@@ -32,6 +32,7 @@ final class Init
 			Admin\AuthorBoxAfterContent::class,
 			Admin\DisableUpdateSettingsPage::class,
 			Admin\DisableUpdateSettings::class,
+			Admin\Pages\StarRating::class,
 		];
 	}
 
