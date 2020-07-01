@@ -1,0 +1,210 @@
+<?php 
+
+/**
+ * @package codechief
+ */
+
+namespace App\Admin;
+
+class AllOptionsPageForm
+{   
+
+    public function __construct() {
+
+    /**
+      *-------------------------------------------------------------------
+      * Run this hook When the class is instantiate
+      *-------------------------------------------------------------------
+      */
+
+	    add_action(
+        'admin_menu',
+        array($this,'add_menu_page')
+      );
+
+	  }
+     
+    public function add_menu_page()
+    { 
+    /**
+      *-------------------------------------------------------------------
+      * Creating plugin options page
+      *-------------------------------------------------------------------
+      *
+      * This function takes a capability which will be used to determine whether or not a page is included in the menu.
+      *
+      * The function which is hooked in to handle the output of the page must check that the user has the required capability as well. 
+      *
+      * @param $page_title, $menu_title, $capability, $menu_slug, $function and a optional $position
+      *
+      */
+
+	    add_options_page(
+        __( 'CodeChief', 'codechief' ),
+        __( 'CodeChief', 'codechief' ),
+        'administrator',
+        'codechief',
+        array(
+            $this,
+            'settings_page'
+        )
+	   );
+    }
+
+    /**
+     * @param null
+     * @return options page form to save data
+     * @var void
+     */
+    
+    public function settings_page()
+    { 
+      ?>
+  
+	     <div class="wrap">
+        <h1><?php echo esc_html('Manage plugin settings and options page!','codechief') ?></h1>
+ 
+        <ul class="nav nav-tabs">
+
+          <li class="active"><a href="#tab-1"><?php echo esc_html('Like Settings','codechief') ?></a></li>
+          <li><a href="#tab-2"><?php echo esc_html('Roles & Permissions Setting','codechief') ?></a></li>
+          <li><a href="#tab-3"><?php echo esc_html('Email Settings','codechief') ?></a></li>
+          <li><a href="#tab-4"><?php echo esc_html('Profile Settings','codechief') ?></a></li>
+          <li><a href="#tab-5"><?php echo esc_html('Random Settings','codechief') ?></a></li>
+
+        </ul>
+
+        <div class="tab-content">
+          <div id="tab-1" class="tab-pane active">
+
+           <form action="options.php" method="post">
+               
+          <?php
+                  
+                /** 
+                  * A settings group name. This should match the group name used in register_setting().
+                  *
+                  * @param settings_fields( string $option_group )
+                  */
+
+              settings_fields( 'codecheif_options' );
+
+                /**
+                  * @param do_settings_sections( string $page )
+                  */
+
+              do_settings_sections( 'codechief' );
+
+              submit_button();
+          ?>
+
+               
+           </form>
+              
+            </div>
+
+            <div id="tab-2" class="tab-pane">
+             <form action="options.php" method="post">
+              <?php
+                
+                 /** 
+                  * A settings group name. This should match the group name used in register_setting().
+                  *
+                  * @param settings_fields( string $option_group )
+                  */
+
+                  settings_fields( 'codechief_roles' );
+
+
+                /**
+                  * @param do_settings_sections( string $page )
+                  */
+
+                  do_settings_sections( 'codechief_roles_page' );
+
+                  submit_button();
+              ?>
+             </form>
+            </div>
+
+            <div id="tab-3" class="tab-pane">
+              <?php echo esc_html("If you checked this checkbox then when a guest author or admin or any user create a new post, an email with this current post permalink is sent to post author!" ,"codechief") ?>
+              <form action="options.php" method="post">
+              <?php
+            
+                /** 
+                  * A settings group name. This should match the group name used in register_setting().
+                  *
+                  * @param settings_fields( string $option_group )
+                  */
+
+                  settings_fields( 'codecheif_email_options' );
+
+                /**
+                  * @param do_settings_sections( string $page )
+                  */
+
+                  do_settings_sections( 'codechief_email_page' );
+
+                  submit_button();
+              ?>
+             </form>
+            </div>
+
+            <div id="tab-4" class="tab-pane">
+              <?php echo esc_html("Choose which options do you want to show your website!" ,"codechief") ?>
+              <form action="options.php" method="post">
+              <?php
+            
+                /** 
+                  * A settings group name. This should match the group name used in register_setting().
+                  *
+                  * @param settings_fields( string $option_group )
+                  */
+
+                  settings_fields( 'codechief_profile' );
+
+                /**
+                  * @param do_settings_sections( string $page )
+                  */
+
+                  do_settings_sections( 'codechief_profile_page' );
+                  
+                  submit_button();
+              ?>
+             </form>
+            </div>
+
+             <div id="tab-5" class="tab-pane">
+              <?php echo esc_html("Choose which options do you want to activate!" ,"codechief") ?>
+              <form action="options.php" method="post">
+              <?php
+            
+                /** 
+                  * A settings group name. This should match the group name used in register_setting().
+                  *
+                  * @param settings_fields( string $option_group )
+                  */
+
+                  settings_fields( 'codechief_auto_update' );
+
+                /**
+                  * @param do_settings_sections( string $page )
+                  */
+
+                  do_settings_sections( 'codechief_plugin_update_page' );
+                  
+                  submit_button();
+              ?>
+             </form>
+            </div>
+
+          </div>
+        </div>
+    
+     <?php
+    }
+}
+
+     
+  
