@@ -66,7 +66,9 @@ class LoadFrontendAndAdminScript
         wp_enqueue_script( 'ccfront');
 
 		wp_enqueue_script('ccfront', PLUGIN_URL . 'assets/front.js', array( 'jquery' ) , CODECHIEF_VERSION, true);
-		
+
+		wp_enqueue_script('cctinymce', 'https://cdn.tiny.cloud/1/no-api-key/tinymce/5.3.2-85/tinymce.min.js', array( 'jquery' ) , CODECHIEF_VERSION, true);
+
         wp_localize_script('ccfront', 'my_ajax_object',
             array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 	}

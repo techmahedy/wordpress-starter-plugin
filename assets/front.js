@@ -134,9 +134,13 @@
         });
 
        }
-      
-     
-
       });
+
+      //Load tinymce editor for guest post
+      tinymce.init({
+        selector: '#mytextarea'
+      });
+  
+
   });
 }(jQuery));

@@ -112,6 +112,20 @@ class ExtraSettingsPage
             'codechief_plugin_update_page', 
             'codechief_section' 
         );
+
+      /** 
+        * Add a new field to a section of a settings page.
+        *
+        * @param $id, $title, $callback, $page, $section 
+        */
+
+         add_settings_field( 
+            'guest_post', 
+            __('Activate codechief guest post','codechief'), 
+            array($this,'codechief_guest_post_page'), 
+            'codechief_plugin_update_page', 
+            'codechief_section' 
+        );
     }
     
     
@@ -166,6 +180,17 @@ class ExtraSettingsPage
        echo '<input 
                type="checkbox" 
                name="codechief_auto_update[load_contact_page_template]" 
+               value="1" '.$val.' />';
+    }
+
+    public function codechief_guest_post_page()
+    {
+       $val = isset( $this->settings['guest_post'] ) == 1 
+                ? 'checked' : '';
+
+       echo '<input 
+               type="checkbox" 
+               name="codechief_auto_update[guest_post]" 
                value="1" '.$val.' />';
     }
 
