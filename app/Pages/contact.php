@@ -1,5 +1,8 @@
 <?php 
 
+/**
+ * @package codechief
+ */
 
 namespace App\Pages;
 
@@ -7,14 +10,26 @@ class Contact
 {
     
     public static function LoadContactPageMarcup()
-    {
+    {   
+        /**
+	      *--------------------------------------------------------------------
+	      * get contact form options page data
+	      *--------------------------------------------------------------------
+	      */
+
+    	$box_options = get_option('codecheif_contact');
+
+        $class_name = $box_options['codechief_contact_custom_class_name'];
+        
+        $final_class = isset( $class_name ) ? $class_name : "input100";
+
     	echo '<form class="contact100-form validate-form" id="codechief_form">
     	        <p id="form_error" style="color:green"></p>
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
 				<span class="label-input100">Full Name:</span>
 
 				<input 
-				     class="input100" 
+				     class="'.$final_class.'" 
 				     type="text" 
 				     name="name" 
 				     id="codechief_form_name"
@@ -28,7 +43,7 @@ class Contact
 				<span class="label-input100">Email:</span>
 
 				<input 
-				      class="input100" 
+				      class="'.$final_class.'" 
 				      type="email" 
 				      name="email"
 				      id="codechief_form_email" 
@@ -42,7 +57,7 @@ class Contact
 				<span class="label-input100">Subject:</span>
 
 				<input 
-				       class="input100" 
+				       class="'.$final_class.'" 
 				       type="text" 
 				       name="subject" 
 				       id="codechief_form_subject"
@@ -56,7 +71,7 @@ class Contact
 				<span class="label-input100">Message:</span>
 
 				<textarea 
-				         class="input100" 
+				         class="'.$final_class.'" 
 				         name="message" 
 				         id="codechief_form_message"
 				         placeholder="Your Comment...">
@@ -77,8 +92,6 @@ class Contact
 				</div>
 				</form>';
     }
-
-
 
 
 }

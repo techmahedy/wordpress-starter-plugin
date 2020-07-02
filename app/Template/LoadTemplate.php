@@ -26,6 +26,7 @@ class LoadTemplate
 
 		$this->templates = array(
 			'Pages/contact.php' => 'CodeChief Contact',
+			'Pages/guest-post.php' => 'Guest Post',
 		);
         
 

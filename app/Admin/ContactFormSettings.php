@@ -68,6 +68,20 @@ class ContactFormSettings
             'codechief_contact_page', 
             'codechief_section' 
         );
+
+      /** 
+        * Add a new field to a section of a settings page.
+        *
+        * @param $id, $title, $callback, $page, $section 
+        */
+
+        add_settings_field( 
+            'codechief_contact_admin_email', 
+            __('Enter super admin email to get mail in your email account','codechief'), 
+            array($this,'codechief_contact_admin_email'), 
+            'codechief_contact_page', 
+            'codechief_section' 
+        );
     }
     
     
@@ -83,13 +97,23 @@ class ContactFormSettings
     public function codechief_contact_form_class_name()
     {
  
-      $val = isset( $this->settings['codecheif_contact'] ) 
-                ? $this->settings['codecheif_contact'] : 'input100';
+      $val = isset( $this->settings['codechief_contact_custom_class_name'] ) 
+                ? $this->settings['codechief_contact_custom_class_name'] : 'input100';
        echo '<input 
                type="text" 
-               name="codecheif_contact[codecheif_contact]" 
+               name="codecheif_contact[codechief_contact_custom_class_name]" 
                value="'.$val.'"  />';
    
+    }
+
+    public function codechief_contact_admin_email()
+    {
+       $val = isset( $this->settings['codechief_contact_admin_email'] ) 
+                ? $this->settings['codechief_contact_admin_email'] : '';
+       echo '<input 
+               type="text" 
+               name="codecheif_contact[codechief_contact_admin_email]" 
+               value="'.$val.'"  />';
     }
 
 }

@@ -59,7 +59,7 @@ class AuthorProfileWidget extends WP_Widget {
             <input type="hidden" id="<?php echo $this->get_field_id('link'); ?>"  name="<?php echo $this->get_field_name('link'); ?>" class="image_er_link" value="<?php echo isset($link) ? esc_url($link) : ''; ?>"
             />
             <div class="image_show">
-                <img src="<?php echo isset($link) ? esc_url($link) : ''; ?>" alt="">
+                <img src="<?php echo isset($link) ? esc_url($link) : ''; ?>" alt="" width="50" height="50">
             </div>
         </p>
 
@@ -94,6 +94,39 @@ class AuthorProfileWidget extends WP_Widget {
         </textarea>
         </p>
 
+        <p>
+        <label for=""><?php echo esc_html('Facebook profile link','codechief'); ?></label>
+        <input
+            class="widefat"
+            type="text"
+            id="<?php echo $this->get_field_id('facebook_link'); ?>"
+            name="<?php echo $this->get_field_name('facebook_link'); ?>"
+            value="<?php echo isset($facebook_link) ? esc_attr($facebook_link) : '#'; ?>" 
+          />
+        </p>
+
+        <p>
+        <label for=""><?php echo esc_html('Twitter profile link','codechief'); ?></label>
+        <input
+            class="widefat"
+            type="text"
+            id="<?php echo $this->get_field_id('twitter_link'); ?>"
+            name="<?php echo $this->get_field_name('twitter_link'); ?>"
+            value="<?php echo isset($twitter_link) ? esc_attr($twitter_link) : '#'; ?>" 
+          />
+        </p>
+        
+        <p>
+        <label for=""><?php echo esc_html('Linkedin profile link','codechief'); ?></label>
+        <input
+            class="widefat"
+            type="text"
+            id="<?php echo $this->get_field_id('linkedin_link'); ?>"
+            name="<?php echo $this->get_field_name('linkedin_link'); ?>"
+            value="<?php echo isset($linkedin_link) ? esc_attr($linkedin_link) : '#'; ?>" 
+          />
+        </p>
+
         <?php
     }
 
@@ -105,14 +138,27 @@ class AuthorProfileWidget extends WP_Widget {
 
        $title = apply_filters('widgets_title',$title);
        $description = apply_filters('widgets_description',$description);
-
-       echo $before_widget;
-         echo $before_title . $title . $after_title; ?>
-        <img src="<?php echo $link; ?>" alt="<?php echo $title; ?>" class="codechief_author_image">
-         <?php echo "<p>$description</p>";
-       echo $after_widget;
-
-
+       
+  echo '<div class="profile-sidebar">
+        <div class="profile-userpic">
+          <img src="'.$link.'" class="img-responsive codechief_author_image" alt="'.$title.'">
+        </div>
+        <div class="profile-usertitle">
+          <div class="profile-usertitle-name">
+            '.$title.'
+          </div>
+          <div class="profile-usertitle-job">
+            '.$description.'
+          </div>
+        </div>
+        <div class="profile-userbuttons">
+          <a href="'.$facebook_link.'" class="codechief_social"><i class="fa fa-facebook"></i></a>
+          <a href="'.$twitter_link.'" class="codechief_social"><i class="fa fa-twitter"></i></a>
+          <a href="'.$linkedin_link.'" class="codechief_social"><i class="fa fa-linkedin"></i></a>
+        </div>
+      </div>
+<br>';
+   
         echo '<style type="text/css">
         img.codechief_author_image{
               width: ' . $width . 'px !important;

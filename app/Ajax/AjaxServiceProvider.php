@@ -105,6 +105,16 @@ class AjaxServiceProvider
   
    public function codechief_submit_contact_form_request()
    {
+      
+       /**
+        *--------------------------------------------------------------------
+        * get contact form options page data
+        *--------------------------------------------------------------------
+        */
+
+      $box_options = get_option('codecheif_contact');
+
+      $admin_email = $box_options['codechief_contact_admin_email'];
 
       $name = $_POST['name']; 
       $email = $_POST['email']; 
@@ -114,7 +124,7 @@ class AjaxServiceProvider
       $message = $body;
 
       $headers[] = '';
-      $to = "mail@codechief.org";
+      $to = $admin_email;
 
       wp_mail($to , $subject, $message, $headers);
    }
