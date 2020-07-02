@@ -6,7 +6,7 @@
 
 namespace App\Admin;
 
-class DisableUpdateSettings 
+class ExtraSettings 
 {
     
     public function __construct()

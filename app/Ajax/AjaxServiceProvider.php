@@ -12,7 +12,7 @@ class AjaxServiceProvider
 {   
 
     public function __construct() {
-
+        
         add_action(
           'wp_ajax_codechief_like_ajax_post_request',
           array($this,'codechief_like_ajax_post_request')
@@ -21,6 +21,16 @@ class AjaxServiceProvider
         add_action(
           'wp_ajax_nopriv_codechief_like_ajax_post_request',
           array($this,'codechief_like_ajax_post_request')
+        );
+
+        add_action(
+          'wp_ajax_codechief_submit_contact_form_request',
+          array($this,'codechief_submit_contact_form_request')
+        );
+
+        add_action(
+          'wp_ajax_nopriv_codechief_submit_contact_form_request',
+          array($this,'codechief_submit_contact_form_request')
         );
 
 	  }
@@ -87,6 +97,26 @@ class AjaxServiceProvider
        return $row;
 
        }
+   }
+   
+  /**
+   * Sending contact form mail
+   */
+  
+   public function codechief_submit_contact_form_request()
+   {
+
+      $name = $_POST['name']; 
+      $email = $_POST['email']; 
+      $subject = $_POST['subject']; 
+      $body = $_POST['body']; 
+
+      $message = $body;
+
+      $headers[] = '';
+      $to = "mail@codechief.org";
+
+      wp_mail($to , $subject, $message, $headers);
    }
 	
 }

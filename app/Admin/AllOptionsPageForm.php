@@ -70,7 +70,8 @@ class AllOptionsPageForm
           <li><a href="#tab-2"><?php echo esc_html('Roles & Permissions Setting','codechief') ?></a></li>
           <li><a href="#tab-3"><?php echo esc_html('Email Settings','codechief') ?></a></li>
           <li><a href="#tab-4"><?php echo esc_html('Profile Settings','codechief') ?></a></li>
-          <li><a href="#tab-5"><?php echo esc_html('Random Settings','codechief') ?></a></li>
+          <li><a href="#tab-5"><?php echo esc_html('Others Settings','codechief') ?></a></li>
+          <li><a href="#tab-6"><?php echo esc_html('Contact Form Settings','codechief') ?></a></li>
 
         </ul>
 
@@ -193,6 +194,34 @@ class AllOptionsPageForm
                   */
 
                   do_settings_sections( 'codechief_plugin_update_page' );
+                  
+                  submit_button();
+              ?>
+             </form>
+            </div>
+
+
+             <div id="tab-6" class="tab-pane">
+               <h1 style="font-family:bold;"><?php echo esc_html('CodeChief contact form settings info', 'codechief'); ?></h1>
+                <h2><?php echo esc_html('Shortcode:', 'codechief') ?> <?php echo esc_attr('[codechief_contact]', 'garuda-keen-rating'); ?></h2>
+                <p><?php echo esc_html('Use this shortcode to display this rating plugin. You can display any where. Just use this shortcode.', 'codechief'); ?></p>
+               <P><?php echo esc_html("To show this contact form just use this shortcode [codechief_contact] and paste it into your contact page. You can choose also codechief plugin contact page template from template box. " ,"codechief") ?></P>
+              <form action="options.php" method="post">
+              <?php
+            
+                /** 
+                  * A settings group name. This should match the group name used in register_setting().
+                  *
+                  * @param settings_fields( string $option_group )
+                  */
+
+                  settings_fields( 'codecheif_contact' );
+
+                /**
+                  * @param do_settings_sections( string $page )
+                  */
+
+                  do_settings_sections( 'codechief_contact_page' );
                   
                   submit_button();
               ?>

@@ -6,7 +6,7 @@
 
 namespace App\Admin;
 
-class DisableUpdateSettingsPage 
+class ExtraSettingsPage 
 {
     public $settings;
     
@@ -97,6 +97,21 @@ class DisableUpdateSettingsPage
             'codechief_plugin_update_page', 
             'codechief_section' 
         );
+
+
+      /** 
+        * Add a new field to a section of a settings page.
+        *
+        * @param $id, $title, $callback, $page, $section 
+        */
+
+        add_settings_field( 
+            'load_contact_page_template', 
+            __('Activate codechief contact page template','codechief'), 
+            array($this,'codechief_load_contact_page_template'), 
+            'codechief_plugin_update_page', 
+            'codechief_section' 
+        );
     }
     
     
@@ -143,6 +158,15 @@ class DisableUpdateSettingsPage
                value="1" '.$val.' />';
     }
 
+    public function codechief_load_contact_page_template()
+    {
+       $val = isset( $this->settings['load_contact_page_template'] ) == 1 
+                ? 'checked' : '';
 
+       echo '<input 
+               type="checkbox" 
+               name="codechief_auto_update[load_contact_page_template]" 
+               value="1" '.$val.' />';
+    }
 
 }

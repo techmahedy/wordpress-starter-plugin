@@ -30,9 +30,10 @@ final class Init
 			Admin\SendEmailToAuthorPage::class,
 			Admin\UserProfileOptionsPage::class,
 			Admin\AuthorBoxAfterContent::class,
-			Admin\DisableUpdateSettingsPage::class,
-			Admin\DisableUpdateSettings::class,
+			Admin\ExtraSettingsPage::class,
+			Admin\ExtraSettings::class,
 			Template\LoadTemplate::class,
+			Admin\ContactFormSettings::class,
 		];
 	}
 
