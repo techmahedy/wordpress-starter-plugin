@@ -26,7 +26,7 @@ class Contact
     	echo '<form class="contact100-form validate-form" id="codechief_form">
     	        <p id="form_error" style="color:green"></p>
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
-				<span class="label-input100">Full Name:</span>
+				<span class="label-input100">'.__('Full Name','codechief').'</span>
 
 				<input 
 				     class="'.$final_class.'" 
@@ -40,7 +40,7 @@ class Contact
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-				<span class="label-input100">Email:</span>
+				<span class="label-input100">'.__('Email','codechief').'</span>
 
 				<input 
 				      class="'.$final_class.'" 
@@ -54,7 +54,7 @@ class Contact
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate="Phone is required">
-				<span class="label-input100">Subject:</span>
+				<span class="label-input100">'.__('Subject','codechief').'</span>
 
 				<input 
 				       class="'.$final_class.'" 
@@ -68,7 +68,7 @@ class Contact
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate="Message is required">
-				<span class="label-input100">Message:</span>
+				<span class="label-input100">'.__('Message','codechief').'</span>
 
 				<textarea 
 				         class="'.$final_class.'" 
@@ -90,7 +90,7 @@ class Contact
 				</span>
 				</button>
 				</div>
-				</form>';
+			</form>';
     }
 
 

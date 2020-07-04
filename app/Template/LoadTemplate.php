@@ -9,7 +9,7 @@ namespace App\Template;
 class LoadTemplate 
 {
 	
-    public $templates;
+  public $templates;
 
 	public function __construct()
 	{  
@@ -46,7 +46,7 @@ class LoadTemplate
       *
       */
 
-        if( $check_template == 1 )
+    if( $check_template == 1 )
 		{
 		  add_filter( 'theme_page_templates', array( $this, 'codechief_custom_template' ));
 		  add_filter( 'template_include', array( $this, 'codechief_load_template' ) );
@@ -67,7 +67,7 @@ class LoadTemplate
       *
       */
 
-       if( $guest_post == 1 )
+    if( $guest_post == 1 )
 		{
 		  add_shortcode('codechief_guestpost', array($this,'codechief_guest_post_page' ) );
 		}
@@ -88,11 +88,14 @@ class LoadTemplate
 		if ( ! $post ) {
 			return $template;
 		}
+    
 		$template_name = get_post_meta( $post->ID, '_wp_page_template', true );
+
 		if ( ! isset( $this->templates[$template_name] ) ) {
 			return $template;
 		}
 		$file = $this->plugin_path . $template_name;
+
 		if ( file_exists( $file ) ) {
 			return $file;
 		}
