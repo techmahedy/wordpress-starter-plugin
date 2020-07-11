@@ -8,17 +8,68 @@ namespace App\Plugin;
 
 class PluginActivated
 {   
+    public function __construct() 
+    {
+      add_action(
+        'admin_init', 
+        array(PluginActivated::class,'codechief_redirect_after_installation')
+      );
+    }
+    
+    public function codechief_activate()
+    {
+      add_option( 
+        'codechief_redirect_after_installation',
+        true 
+      );
+    }
+    
+    /**
+      *----------------------------------------------------------------
+      * Force user to redirect plugin settings page
+      *----------------------------------------------------------------
+      *
+      * This function check where is the redirect location
+      *
+      * This table is used for like option. 
+      * wp_safe_redirect() method @return redirect $page
+      * @param null
+      * @var void
+      * @return redirect $page
+      *
+      */
+
+    public function codechief_redirect_after_installation()
+    {
+
+    if ( get_option( 'codechief_redirect_after_installation', false ) ) {
+  
+      delete_option( 'codechief_redirect_after_installation' );
+      
+    /**
+      *-----------------------------------------------------------------
+      * Redirect codechief page after activationg plugin
+      *-----------------------------------------------------------------
+      */
+
+      wp_safe_redirect( admin_url( 'options-general.php?page=codechief' ) );
+
+      exit;
+
+      }
+    }
 
     public static function codechief_plugin_activated()
     {  
       
     /**
-      *--------------------------------------------------------------------
+      *-----------------------------------------------------------------
       * Run this method when plugin is activated
-      *--------------------------------------------------------------------
+      *-----------------------------------------------------------------
       */
 
     	flush_rewrite_rules();
+
     }
     
     /**

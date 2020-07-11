@@ -4,7 +4,7 @@
 Plugin Name: CodeChief
 Plugin URI: https://wordpress.org/plugins/codechief
 Description: A awesome WordPress plugin to manage many user options and create many new features easily from admin panel.
-Version: 1.0.0
+Version: 1.0.1
 Author: CodeChief
 Author URI: https://profiles.wordpress.org/mahedy150101/
 License: GPLv2 or later
@@ -107,6 +107,8 @@ if ( class_exists( 'App\\Plugin\\PluginDeActivated' ) ) {
  */
 
 register_activation_hook(__FILE__, array(PluginActivated::class,'create_database_table'));
+
+register_activation_hook( __FILE__, array(PluginActivated::class,'codechief_activate') );
 
 register_deactivation_hook( __FILE__, array(PluginDeActivated::class,'delete_database_table' ));
 
