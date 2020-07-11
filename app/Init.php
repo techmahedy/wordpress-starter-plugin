@@ -16,7 +16,7 @@ final class Init
 	public static function codechief_get_class() 
 	{
 		return [
-			Base\LoadFrontendAndAdminScript::class,
+			Enqueue\LoadFrontendAndAdminScript::class,
 			Plugin\PluginActivated::class,
 			Plugin\PluginDeActivated::class,
 			Admin\AllOptionsPageForm::class,

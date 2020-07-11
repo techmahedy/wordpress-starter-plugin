@@ -44,14 +44,17 @@ class AjaxServiceProvider
     public function codechief_like_ajax_post_request()
     {
 
-       global $wpdb;
+      global $wpdb;
 
-       require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-       $table_name = $wpdb->prefix . "codechief_like"; 
+      require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+      $table_name = $wpdb->prefix . "codechief_like"; 
        
-       $post_id = $_POST['post_id']; 
-       $ip = getenv("REMOTE_ADDR");  
+      $post_id = sanitize_text_field(wp_unslash($_POST['post_id'])); 
+      $ip = $_SERVER['REMOTE_ADDR']; 
        
+      $check_user_like = $wpdb->get_var("SELECT COUNT(*) FROM $table_name WHERE (post_id = '".$post_id."' AND ip = '". $ip ."')");
+
+      if($check_user_like != true) {
        if(isset($post_id) && isset($ip)){
        
         $wpdb->insert(
@@ -70,9 +73,14 @@ class AjaxServiceProvider
     
         if($wpdb->insert_id) 
         {
-          echo 'thanks for loving this post';
+          echo esc_html('thanks for loving this post','codechief');
         }
      }
+   }
+   else
+   {
+    echo esc_html('You already like this post','codechief');
+   }
 
     wp_die();
 
@@ -106,27 +114,25 @@ class AjaxServiceProvider
    public function codechief_submit_contact_form_request()
    {
       
-       /**
-        *--------------------------------------------------------------------
-        * get contact form options page data
-        *--------------------------------------------------------------------
-        */
+     /**
+      *---------------------------------------------------------------
+      * get contact form options page data
+      *---------------------------------------------------------------
+      */
 
       $box_options = get_option('codecheif_contact');
 
       $admin_email = $box_options['codechief_contact_admin_email'];
 
-      $name = $_POST['name']; 
-      $email = $_POST['email']; 
-      $subject = $_POST['subject']; 
-      $body = $_POST['body']; 
-
-      $message = $body;
+      $name    = sanitize_text_field($_POST['name']); 
+      $email   = sanitize_text_field($_POST['email']); 
+      $subject = sanitize_text_field($_POST['subject']); 
+      $body    = sanitize_text_field($_POST['body']); 
 
       $headers[] = '';
       $to = $admin_email;
 
-      wp_mail($to , $subject, $message, $headers);
+      wp_mail($to , $subject, $body, $headers);
    }
 	
 }

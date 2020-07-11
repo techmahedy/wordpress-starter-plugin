@@ -9,7 +9,7 @@ namespace App\Pages;
 class Contact
 {
     
-    public static function LoadContactPageMarcup()
+    public static function codechief_contact_page_markup()
     {   
         /**
 	      *--------------------------------------------------------------------
@@ -26,10 +26,10 @@ class Contact
     	echo '<form class="contact100-form validate-form" id="codechief_form">
     	        <p id="form_error" style="color:green"></p>
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
-				<span class="label-input100">'.__('Full Name','codechief').'</span>
+				<span class="label-input100">'.esc_html(__('Full Name','codechief')).'</span>
 
 				<input 
-				     class="'.$final_class.'" 
+				     class="'.esc_html($final_class,'codechief').'" 
 				     type="text" 
 				     name="name" 
 				     id="codechief_form_name"
@@ -43,7 +43,7 @@ class Contact
 				<span class="label-input100">'.__('Email','codechief').'</span>
 
 				<input 
-				      class="'.$final_class.'" 
+				      class="'.esc_html($final_class,'codechief').'" 
 				      type="email" 
 				      name="email"
 				      id="codechief_form_email" 
@@ -57,7 +57,7 @@ class Contact
 				<span class="label-input100">'.__('Subject','codechief').'</span>
 
 				<input 
-				       class="'.$final_class.'" 
+				       class="'.esc_html($final_class,'codechief').'" 
 				       type="text" 
 				       name="subject" 
 				       id="codechief_form_subject"
@@ -71,7 +71,7 @@ class Contact
 				<span class="label-input100">'.__('Message','codechief').'</span>
 
 				<textarea 
-				         class="'.$final_class.'" 
+				         class="'.esc_html($final_class,'codechief').'" 
 				         name="message" 
 				         id="codechief_form_message"
 				         placeholder="Your Comment...">

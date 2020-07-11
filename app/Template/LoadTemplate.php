@@ -6,6 +6,9 @@
 
 namespace App\Template;
 
+use App\Pages\Contact;
+use App\Pages\GuestPost;
+
 class LoadTemplate 
 {
 	
@@ -16,9 +19,9 @@ class LoadTemplate
 
 		$box_options = get_option('codechief_auto_update');
 
-        $check_template = $box_options['load_contact_page_template'];
+    $check_template = $box_options['load_contact_page_template'];
 
-        $guest_post = $box_options['guest_post'];
+    $guest_post = $box_options['guest_post'];
         
 	  /**
 		* lOAD ALL THE CUSTOM PAGE TEMPLATE
@@ -27,8 +30,8 @@ class LoadTemplate
 		*/
 
 		$this->templates = array(
-			'Pages/contact.php' => 'CodeChief Contact',
-			'Pages/guestpost.php' => 'Guest Post',
+			'Pages/contact.php' => __('CodeChief Contact','codechief'),
+			'Pages/guestpost.php' => __('CodeChief Guest Post','codechief'),
 		);
         
 
@@ -51,6 +54,7 @@ class LoadTemplate
 		  add_filter( 'theme_page_templates', array( $this, 'codechief_custom_template' ));
 		  add_filter( 'template_include', array( $this, 'codechief_load_template' ) );
 		  add_shortcode('codechief_contact', array($this,'codechief_contact_page' ) );
+      add_shortcode('codechief_guestpost', array($this,'codechief_contact_page' ) );
 		}
 
     /**
@@ -119,7 +123,7 @@ class LoadTemplate
 
 	public function codechief_contact_page()
 	{
-	   return \App\Pages\Contact::LoadContactPageMarcup();
+	   return Contact::codechief_contact_page_markup();
 	}
 
     /**
@@ -136,6 +140,6 @@ class LoadTemplate
       */
 	public function codechief_guest_post_page()
 	{
-		return \App\Pages\GuestPost::LoadGuestPostPageMarcup();
+		return GuestPost::codechief_guestpost_markup();
 	}
 }

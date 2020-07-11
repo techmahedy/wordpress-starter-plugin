@@ -72,6 +72,7 @@ class AllOptionsPageForm
           <li><a href="#tab-4"><?php echo esc_html('Profile Settings','codechief') ?></a></li>
           <li><a href="#tab-5"><?php echo esc_html('Others Settings','codechief') ?></a></li>
           <li><a href="#tab-6"><?php echo esc_html('Contact Form Settings','codechief') ?></a></li>
+          <li><a href="#tab-7"><?php echo esc_html('About','codechief') ?></a></li>
 
         </ul>
 
@@ -226,6 +227,14 @@ class AllOptionsPageForm
                   submit_button();
               ?>
              </form>
+            </div>
+
+            <div id="tab-7" class="tab-pane">
+
+              <h1 style="font-family:bold;"><?php echo esc_html('About this plugin', 'codechief'); ?></h1>
+              <p><?php echo esc_html('If you find any issues of this plugin, please contact with me.', 'codechief'); ?></p>
+              <P><?php echo esc_html("To contact with me, visit" ,"codechief") ?><a href="https://www.codechief.org/contact-us"> <?php echo esc_html('Contact','codechief'); ?></a></P>
+        
             </div>
 
           </div>

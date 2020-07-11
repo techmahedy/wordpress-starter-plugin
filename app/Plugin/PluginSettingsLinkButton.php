@@ -18,7 +18,7 @@ class PluginSettingsLinkButton
       *--------------------------------------------------------------------
       */
         add_filter(
-          'plugin_action_links_' . PLUGIN_BASENAME, 
+          'plugin_action_links_' . CODECHIEF_PLUGIN_BASENAME, 
           array($this,'add_plugin_page_settings_link')
         );
     }

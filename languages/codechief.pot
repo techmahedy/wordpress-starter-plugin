@@ -1,0 +1,157 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: CodeChief\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-10 10:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.4.0; wp-5.4.2"
+
+#. Description of the plugin
+msgid ""
+"A awesome WordPress plugin to manage many user options and create many new "
+"features easily from admin panel."
+msgstr ""
+
+#: app/Admin/AuthorProfileWidget.php:28
+msgid "A simple author profile box"
+msgstr ""
+
+#: app/Admin/ExtraSettingsPage.php:110
+msgid "Activate codechief contact page template"
+msgstr ""
+
+#: app/Admin/ExtraSettingsPage.php:124
+msgid "Activate codechief guest post"
+msgstr ""
+
+#: app/Admin/UserProfileOptionsPage.php:68
+msgid "Activate profile box after post"
+msgstr ""
+
+#: app/Admin/UserProfileOptionsPage.php:60
+msgid "Activate profile widget"
+msgstr ""
+
+#: app/Admin/SendEmailToAuthorPage.php:66
+msgid "Activate sending mail to author after publishinhg post"
+msgstr ""
+
+#. Name of the plugin
+#. Author of the plugin
+#: app/Admin/AllOptionsPageForm.php:43 app/Admin/AllOptionsPageForm.php:44
+msgid "CodeChief"
+msgstr ""
+
+#: app/Admin/AuthorProfileWidget.php:29
+msgid "CodeChief: Author Box"
+msgstr ""
+
+#: app/Admin/ExtraSettingsPage.php:66
+msgid "Disable automatic WordPress plugin updates"
+msgstr ""
+
+#: app/Admin/ExtraSettingsPage.php:80
+msgid "Disable automatic WordPress theme updates"
+msgstr ""
+
+#: app/Admin/ExtraSettingsPage.php:95
+msgid "Disable WordPress default theme comments system"
+msgstr ""
+
+#: app/Pages/contact.php:43
+msgid "Email"
+msgstr ""
+
+#: app/Admin/UserRoleAndCapabilitiesPage.php:67
+msgid "Enter new role name"
+msgstr ""
+
+#: app/Admin/UserRoleAndCapabilitiesPage.php:80
+msgid "Enter role display name"
+msgstr ""
+
+#: app/Admin/ContactFormSettings.php:80
+msgid "Enter super admin email to get mail in your email account"
+msgstr ""
+
+#: app/Admin/ContactFormSettings.php:66
+msgid ""
+"Enter your custom class name, if you want to change this default form design"
+msgstr ""
+
+#: app/Pages/contact.php:29
+msgid "Full Name"
+msgstr ""
+
+#: app/Admin/ContactFormSettings.php:53 app/Admin/ExtraSettingsPage.php:53
+#: app/Admin/LikeButtonSettingPage.php:59
+#: app/Admin/SendEmailToAuthorPage.php:53
+#: app/Admin/UserProfileOptionsPage.php:47
+#: app/Admin/UserRoleAndCapabilitiesPage.php:54
+msgid "General Settings"
+msgstr ""
+
+#: app/Admin/LikeButtonSettingPage.php:126
+msgid "Hide like button"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://profiles.wordpress.org/mahedy150101/"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://www.codechief.org/wordpress/codechief"
+msgstr ""
+
+#: app/Pages/contact.php:71
+msgid "Message"
+msgstr ""
+
+#: app/Admin/LikeButtonSettingPage.php:93
+msgid "Select button background color"
+msgstr ""
+
+#: app/Admin/LikeButtonSettingPage.php:82
+msgid "Select button border color"
+msgstr ""
+
+#: app/Admin/LikeButtonSettingPage.php:71
+msgid "Select color for thumbs-up icon"
+msgstr ""
+
+#: app/Admin/LikeButtonSettingPage.php:104
+msgid "Select hovar background color"
+msgstr ""
+
+#: app/Admin/LikeButtonSettingPage.php:115
+msgid "Select hovar border color"
+msgstr ""
+
+#: app/Pages/contact.php:57
+msgid "Subject"
+msgstr ""
+
+#: app/Admin/UserRoleAndCapabilitiesPage.php:122
+msgid "User can delete post ? "
+msgstr ""
+
+#: app/Admin/UserRoleAndCapabilitiesPage.php:108
+msgid "User can edit post ? "
+msgstr ""
+
+#: app/Admin/UserRoleAndCapabilitiesPage.php:136
+msgid "User can manage options ? "
+msgstr ""
+
+#: app/Admin/UserRoleAndCapabilitiesPage.php:94
+msgid "User can read post ? "
+msgstr ""

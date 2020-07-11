@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: CodeChief
-Plugin URI: https://www.codechief.org/wordpress/codechief
+Plugin URI: https://wordpress.org/plugins/codechief
 Description: A awesome WordPress plugin to manage many user options and create many new features easily from admin panel.
 Version: 1.0.0
 Author: CodeChief
@@ -13,7 +13,7 @@ Text Domain: codechief
 */
 
 
-defined( 'ABSPATH' ) or die( 'Hey, what are you doing here?');
+defined( 'ABSPATH' ) or die( 'Great!');
 
 /**
  * @return importing those classes to autoload those class file
@@ -46,9 +46,8 @@ if ( file_exists( dirname( __FILE__ ) .'/vendor/autoload.php' ) ) {
  * @return creating plugin path and plugin directrory url
  */
 
-define( 'PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
-define( 'PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+define( 'CODECHIEF_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'CODECHIEF_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
 /**
  * @method define constant global plugin version

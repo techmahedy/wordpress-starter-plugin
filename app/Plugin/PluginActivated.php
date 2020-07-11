@@ -45,7 +45,6 @@ class PluginActivated
 
 	    $sql = "CREATE TABLE IF NOT EXISTS $table_name (
 	      id mediumint(9) NOT NULL AUTO_INCREMENT,
-	      time timestamp DEFAULT '0000-00-00 00:00:00' NOT NULL,
 	      post_id mediumint(9) NOT NULL,
 	      value mediumint(9) NOT NULL,
 	      ip varchar(55) NOT NULL,

@@ -4,41 +4,37 @@
  * @package codechief
  */
 
-error_reporting(0);
 
 $codechief_profile = get_option('codechief_profile');
 
 $check = $codechief_profile['codechief_widget_checkbox'];
 
 if ( $check != 1 ) 
- {
-    return;
- }
- else
- {
-    goto run_below_code;
- }
-
-run_below_code:
+{
+  return;
+}
 
 class AuthorProfileWidget extends WP_Widget {
 
     function __construct(){
         $params = array(
-           'description' => __('A simple author profile box','codechief'),
-           'name' => __('CodeChief: Author Box','codechief')
+          'description' => __('A simple author profile box','codechief'),
+          'name' => __('CodeChief: Author Box','codechief')
         );
 
         parent::__construct('CodeChief','',$params ); 
 
-        add_action( 'admin_init',array($this,'codechief_script_loaded'));
+        add_action( 
+          'admin_init',
+          array($this,'codechief_script_loaded')
+        );
     }
     
     public function codechief_script_loaded() {
 
         wp_enqueue_media();
         wp_enqueue_script( 'custom-js');
-        wp_enqueue_script( 'custom-js', PLUGIN_URL .'assets/custom.js', array( 'wp-color-picker' ), false, true );
+        wp_enqueue_script( 'custom-js', CODECHIEF_PLUGIN_URL .'assets/custom.js', array( 'wp-color-picker' ), false, true );
     }
 
     public function form($instance){
@@ -141,28 +137,28 @@ class AuthorProfileWidget extends WP_Widget {
        
   echo '<div class="profile-sidebar">
         <div class="profile-userpic">
-          <img src="'.$link.'" class="img-responsive codechief_author_image" alt="'.$title.'">
+          <img src="'.esc_url($link).'" class="img-responsive codechief_author_image" alt="'.esc_html($title).'">
         </div>
         <div class="profile-usertitle">
           <div class="profile-usertitle-name">
-            '.$title.'
+            '.esc_html($title).'
           </div>
           <div class="profile-usertitle-job">
-            '.$description.'
+            '.esc_html($description).'
           </div>
         </div>
         <div class="profile-userbuttons">
-          <a href="'.$facebook_link.'" class="codechief_social"><i class="fa fa-facebook"></i></a>
-          <a href="'.$twitter_link.'" class="codechief_social"><i class="fa fa-twitter"></i></a>
-          <a href="'.$linkedin_link.'" class="codechief_social"><i class="fa fa-linkedin"></i></a>
+          <a href="'.esc_url($facebook_link).'" class="codechief_social"><i class="fa fa-facebook"></i></a>
+          <a href="'.esc_url($twitter_link).'" class="codechief_social"><i class="fa fa-twitter"></i></a>
+          <a href="'.esc_url($linkedin_link).'" class="codechief_social"><i class="fa fa-linkedin"></i></a>
         </div>
       </div>
 <br>';
    
         echo '<style type="text/css">
         img.codechief_author_image{
-              width: ' . $width . 'px !important;
-              height: ' . $height . 'px !important;
+              width: ' . esc_attr($width) . 'px !important;
+              height: ' . esc_attr($height) . 'px !important;
         }
         </style>';
     }

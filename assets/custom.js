@@ -2,7 +2,6 @@
 
   $(document).ready(function(){
    
-   //Widget media upload
     $('button#author_info_image').on("click",function(object){
 
        object.preventDefault(); 
@@ -15,14 +14,15 @@
                'text' : 'Set the image'
            },
            'multiple' : true
-       }); // wp javascript object
-       imageUploader.open(); // For opening image box
+       }); 
+
+       imageUploader.open(); 
 
        imageUploader.on("select" , function(){
           var image = imageUploader.state().get("selection").first().toJSON();
           var link = image.url;
 
-          $("input.image_er_link").val(link);
+          $("input.image_er_link").val( link );
           $(".image_show img").attr('src' , link);
        }); 
 

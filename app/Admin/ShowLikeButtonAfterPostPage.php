@@ -11,7 +11,7 @@ class ShowLikeButtonAfterPostPage
 
     $check = $like_button['color_check'];
 
-    if( $check == 1)
+    if( $check != 1)
 
 	add_filter( 
         "the_content", 
