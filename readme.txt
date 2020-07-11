@@ -13,7 +13,7 @@ A awesome WordPress plugin to manage many user options and create many new featu
 == Description ==
 CodeChief is an amazing multipurpose WordPress plugin where you can easily manage many options. It is easily customizable and easy to handle. 
 
-**Garuda Keen Rating Features:**
+**CodeChief Features:**
 1. Admin can change like button colors and options.
 2. Admin can add new user roles and permissions as many as he want.
 3. Admin can activate sending mail to author after publishinhg post.
