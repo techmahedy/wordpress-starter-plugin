@@ -57,6 +57,8 @@ Drop me a line in the support forum and we can discuss it.
 = 1.0.1 =
 * Fixing all the sanitization and php warning errors.
 * prefix all the plugin function name with plugin text domain.
+= 1.0.2 =
+* Change namespace app to base.
 
 = 1.0 =
 * Initial release

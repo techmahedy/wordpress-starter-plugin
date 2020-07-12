@@ -4,7 +4,7 @@
 Plugin Name: CodeChief
 Plugin URI: https://wordpress.org/plugins/codechief
 Description: A awesome WordPress plugin to manage many user options and create many new features easily from admin panel.
-Version: 1.0.1
+Version: 1.0.2
 Author: CodeChief
 Author URI: https://profiles.wordpress.org/mahedy150101/
 License: GPLv2 or later
