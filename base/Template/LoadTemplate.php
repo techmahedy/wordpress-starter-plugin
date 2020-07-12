@@ -4,10 +4,10 @@
  * @package  Keenshot Companion
  */
 
-namespace App\Template;
+namespace Base\Template;
 
-use App\Pages\Contact;
-use App\Pages\GuestPost;
+use Base\Pages\Contact;
+use Base\Pages\GuestPost;
 
 class LoadTemplate 
 {

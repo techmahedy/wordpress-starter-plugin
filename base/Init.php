@@ -4,7 +4,7 @@
  * @package  codechief
  */
 
-namespace App;
+namespace Base;
 
 final class Init
 {   

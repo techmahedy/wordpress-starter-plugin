@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Admin;
+namespace Base\Admin;
 
 class ShowLikeButtonAfterPostPage 
 {   
@@ -50,7 +50,7 @@ class ShowLikeButtonAfterPostPage
 
         if (is_single()) {  
 
-          $content .= '<span class="codechief-like-button"><p class="like-font">Was this article helpful?</p><i class="fa fa-thumbs-up" id="codechief-like" data-id="'.get_the_ID().'" aria-hidden="true"></i> <div id="" class="like-bottom">'.\App\Ajax\AjaxServiceProvider::codechief_like_ajax_get_request(get_the_ID()).'</div><P id="message"></></span>';
+          $content .= '<span class="codechief-like-button"><p class="like-font">Was this article helpful?</p><i class="fa fa-thumbs-up" id="codechief-like" data-id="'.get_the_ID().'" aria-hidden="true"></i> <div id="" class="like-bottom">'.\Base\Ajax\AjaxServiceProvider::codechief_like_ajax_get_request(get_the_ID()).'</div><P id="message"></></span>';
         }
 
         return $content;

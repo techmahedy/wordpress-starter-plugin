@@ -4,7 +4,7 @@
  * @package codechief
  */
 
-namespace App\Admin;
+namespace Base\Admin;
  
 class AuthorBoxAfterContent
 {

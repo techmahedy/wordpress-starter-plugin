@@ -4,7 +4,7 @@
  * @package  codechief
  */
 
-namespace App\Enqueue;
+namespace Base\Enqueue;
 
 class LoadFrontendAndAdminScript
 {   

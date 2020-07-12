@@ -4,7 +4,7 @@
  * @package codechief
  */
 
-namespace App\Pages;
+namespace Base\Pages;
 
 class Contact
 {

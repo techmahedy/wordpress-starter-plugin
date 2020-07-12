@@ -4,7 +4,7 @@
  * @package codechief
  */
 
-namespace App\Plugin;
+namespace Base\Plugin;
 
 class PluginSettingsLinkButton
 {   

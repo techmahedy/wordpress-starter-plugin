@@ -6,7 +6,7 @@
     * @version 1.0.0
     */
 
-namespace App\Ajax;
+namespace Base\Ajax;
 
 class AjaxServiceProvider
 {   

@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Admin;
+namespace Base\Admin;
 
 class SendMailToAuthorAfterPublishPost
 {

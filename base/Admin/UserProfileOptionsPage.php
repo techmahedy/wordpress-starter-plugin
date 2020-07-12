@@ -6,7 +6,7 @@
  * @version 1.0.0
  */
 
-namespace App\Admin;
+namespace Base\Admin;
 
 class UserProfileOptionsPage
 {   

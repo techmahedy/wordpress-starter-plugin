@@ -19,9 +19,9 @@ defined( 'ABSPATH' ) or die( 'Great!');
  * @return importing those classes to autoload those class file
  */
 
-use App\Init;
-use App\Plugin\PluginActivated;
-use App\Plugin\PluginDeActivated;
+use Base\Init;
+use Base\Plugin\PluginActivated;
+use Base\Plugin\PluginDeActivated;
 
 /**
 *--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ if (!defined('CODECHIEF_VERSION')) {
  * @return When this plugin will activate, this method will render.
  */
 
-if ( class_exists( 'App\\Plugin\\PluginActivated' ) ) {
+if ( class_exists( 'Base\\Plugin\\PluginActivated' ) ) {
 
    PluginActivated::codechief_plugin_activated();
 
@@ -88,7 +88,7 @@ if ( class_exists( 'App\\Plugin\\PluginActivated' ) ) {
  * @return When this plugin will deactivate, this method will render.
  */
 
-if ( class_exists( 'App\\Plugin\\PluginDeActivated' ) ) {
+if ( class_exists( 'Base\\Plugin\\PluginDeActivated' ) ) {
 
   PluginDeActivated::codechief_plugin_deactivated();
 
@@ -118,7 +118,7 @@ register_deactivation_hook( __FILE__, array(PluginDeActivated::class,'delete_dat
  * @return void
  */
 
-if ( class_exists( 'App\\Init' ) ) 
+if ( class_exists( 'Base\\Init' ) ) 
 {
 	Init::codechief_services_loaded();
 }
