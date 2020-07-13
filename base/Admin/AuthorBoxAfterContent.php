@@ -20,7 +20,8 @@ class AuthorBoxAfterContent
 
         $box_options = get_option('codechief_profile');
 
-        $check = $box_options['codechief_box_checkbox'];
+        $check = isset($box_options['codechief_box_checkbox'])
+                 ? $box_options['codechief_box_checkbox'] : '';
         
       /**
         * @var $check

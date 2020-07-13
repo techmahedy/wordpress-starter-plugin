@@ -19,9 +19,10 @@ class LoadTemplate
 
 		$box_options = get_option('codechief_auto_update');
 
-    $check_template = $box_options['load_contact_page_template'];
+    $check_template = isset($box_options['load_contact_page_template']) ? $box_options['load_contact_page_template'] : '';
 
-    $guest_post = $box_options['guest_post'];
+    $guest_post = isset($box_options['guest_post'])
+                  ? $box_options['guest_post'] : '';
         
 	  /**
 		* lOAD ALL THE CUSTOM PAGE TEMPLATE

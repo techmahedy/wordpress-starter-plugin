@@ -20,11 +20,14 @@ class ExtraSettings
 
         $box_options = get_option('codechief_auto_update');
 
-        $check_plugin = $box_options['plugin_update_check'];
+        $check_plugin = isset($box_options['plugin_update_check'])
+                        ? $box_options['plugin_update_check'] : '';
 
-        $check_theme = $box_options['theme_update_check'];
+        $check_theme = isset($box_options['theme_update_check'])
+                        ? $box_options['theme_update_check'] : '';
 
-        $check_comments = $box_options['comments_disable'];
+        $check_comments = isset($box_options['comments_disable'])
+                        ? $box_options['comments_disable'] : '';
         
       /**
         * @var $check_plugin

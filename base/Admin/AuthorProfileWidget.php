@@ -7,7 +7,8 @@
 
 $codechief_profile = get_option('codechief_profile');
 
-$check = $codechief_profile['codechief_widget_checkbox'];
+$check = isset($codechief_profile['codechief_widget_checkbox']) ? 
+         $codechief_profile['codechief_widget_checkbox'] : '';
 
 if ( $check != 1 ) 
 {

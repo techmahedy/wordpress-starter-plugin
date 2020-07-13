@@ -39,7 +39,7 @@ if ( file_exists( dirname( __FILE__ ) .'/vendor/autoload.php' ) ) {
 
 	require_once dirname( __FILE__ ) .'/vendor/autoload.php';
 
-	require_once dirname( __FILE__ ) .'/app/admin/AuthorProfileWidget.php';
+	require_once dirname( __FILE__ ) .'/base/admin/AuthorProfileWidget.php';
 }
 
 /**
