@@ -49,9 +49,9 @@ Drop me a line in the support forum and we can discuss it.
 2. Contact Form
 3. Guest Post
 4. Author Profile Widget
-5. Author Profile Widget Settings
-6. Like Button After Post
-7. Author Profile Box
+5. Like Button After Post
+6. Author Profile Box
+7. Author Profile Widget Settings
 
 == Changelog ==
 = 1.0.1 =
